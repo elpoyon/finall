@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style6.css') }}">
+    <title>Agregar Origenes</title>
+</head>
+<body>
+    <div class="login-box">
+        <h1>Agregar Origenes</h1>
+        <form action="{{ url_for('origenes.add') }}" method="POST">
+            <div class="user-box">
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="nombre">Nombre</label>
+            </div>
+            <div class="user-box">
+                <input type="text" id="direccion" name="direccion" required>
+                <label for="direccion">Dirección</label>
+            </div>
+            <div class="user-box">
+                <input type="text" id="telefono" name="telefono" required>
+                <label for="telefono">Teléfono</label>
+            </div>
+            <!-- Usamos un botón de tipo submit en lugar de un enlace -->
+            <button type="submit" class="btn-submit">Agregar Origenes</button>
+        </form>
+    </div>
+</body>
+</html>

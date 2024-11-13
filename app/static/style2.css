@@ -1,0 +1,118 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh; /* Corrección de la unidad */
+    background: url("https://static.vecteezy.com/system/resources/previews/026/423/087/non_2x/a-white-truck-on-highway-with-galaxy-background-insane-detail-made-by-ai-generative-free-photo.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.contenedor {
+    position: relative;
+    width: 400px;
+    border: 2px solid rgba(255, 255, 255, .6);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor h2 {
+    font-size: 2.3em;
+    color: #fff;
+    text-align: center;
+}
+
+.input-contenedor {
+    position: relative;
+    margin: 30px 0;
+    width: 300px;
+    border-bottom: 2px solid #fff; /* Corrección del borde */
+}
+
+.input-contenedor label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: .6s;
+    font-weight: bold; /* Corrección de font-weight */
+}
+
+input:focus ~ label,
+input:valid ~ label {
+    top: -5%;
+}
+
+.input-contenedor input {
+    width: 100%;
+    height: 50%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 35px 0 5px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif; /* Adición de font-family */
+}
+
+.input-contenedor i {
+    position: absolute;
+    color: #FFF;
+    font-size: 1.6em;
+    top: 19px;
+    right: 8px;
+}
+
+.olvidar {
+    margin: -15px 0 15px; /* Corrección del margen */
+    font-size: .9em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    transition: .3s;
+}
+button{
+    width: 100%;
+    height: 45px;
+    border-radius: 40px;
+    background: #FFF;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    font-size: 1rem;
+    transition: .4s;
+}
+button:hover{
+    opacity: .9s;
+}
+
+.registrar{
+    font-size: .8rem;
+    color: #FFF;
+    text-align: center;
+    margin: 20px 0 10px;
+}
+
+.registrar p a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: .3s;
+}
+.raregistr p a:hover{
+    text-decoration: underline;
+}

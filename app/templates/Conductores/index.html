@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style9.css') }}">
+    <title>Conductores</title>
+</head>
+<body>
+    <h1>Lista de Conductores</h1>
+
+    <div class="user-box">
+        <input type="text" id="searchInput" placeholder="Buscar por nombre" />
+
+        <table id="userTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for conductores in data %}
+                    <tr>
+                        <td>{{ conductores.id }}</td>
+                        <td>{{ conductores.nombre }}</td>
+                        <td>{{ conductores.direccion }}</td>
+                        <td>{{ conductores.telefono }}</td>
+                        <td>
+                            
+                            <a href="{{ url_for('conductores.edit', id=conductores.id) }}">
+                                <button class="a2">Editar</button>
+                            </a>
+                            <br>
+                            <a href="{{ url_for('conductores.delete', id=conductores.id) }}">
+                                <button class="a2">Eliminar</button>
+                            </a>
+
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ url_for('conductores.add') }}">
+            <button class="a2">Agregar</button>
+        </a>
+        <a href="{{ url_for('auth.login') }}">
+            <button class="a2">Regresar</button>
+        </a>
+    </div>
+
+    <script>
+        // Funcionalidad de búsqueda
+        document.getElementById('searchInput').addEventListener('keyup', function() {
+            const searchValue = this.value.toLowerCase();
+            const rows = document.querySelectorAll('#userTable tbody tr');
+            rows.forEach(row => {
+                const userName = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+                row.style.display = userName.includes(searchValue) ? '' : 'none';
+            });
+        });
+
+        // Función para confirmar eliminación
+        function confirmDelete(url) {
+            if (confirm("¿Estás seguro de que quieres eliminar este conductor?")) {
+                window.location.href = url;
+            }
+        }
+
+        // Lector de QR
+        let html5QrcodeScanner;
+
+        function onScanSuccess(decodedText, decodedResult) {
+            try {
+                const jsonObject = JSON.parse(decodedText);
+                const id = jsonObject.ID;
+                window.location.href = `/User/detail/${id}`;
+            } catch (error) {
+                console.error("Error al parsear el QR a JSON:", error);
+                alert(`Código QR escaneado: ${decodedText}\nNota: El texto no es un JSON válido.`);
+            }
+        }
+
+        function onScanFailure(error) {
+            console.warn(`Error de escaneo: ${error}`);
+        }
+
+        const qrReaderModal = document.getElementById('qrReaderModal');
+
+        qrReaderModal.addEventListener('shown.bs.modal', function () {
+            html5QrcodeScanner = new Html5QrcodeScanner("reader", { fps: 10, qrbox: 250 });
+            html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+        });
+
+        qrReaderModal.addEventListener('hidden.bs.modal', function () {
+            if (html5QrcodeScanner) {
+                html5QrcodeScanner.clear().then(() => {
+                    console.log("Lector de QR detenido y limpiado.");
+                }).catch((error) => {
+                    console.error("Error al detener el lector de QR: ", error);
+                });
+            }
+        });
+    </script>
+
+    <script src="{{ url_for('static', filename='html5-qrcode.min.js') }}"></script>
+</body>
+</html>

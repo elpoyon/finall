@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+body{
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 75px;
+    background-color: #171717;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar{
+    display: flex;
+    margin-right: 10px;
+}
+
+
+.navbar a{
+    display: block;
+    padding: 23px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+.navbar a:hover{
+background: #3f3f3f;
+}
+
+header {
+    position: relative;
+    padding: 10px;
+}
+header img {
+    height: auto;
+    width: 65px;
+    filter: drop-shadow(
+        0 0 40px transparent
+    );
+    position: fixed; 
+    top: 0;
+    left: 25px;
+    z-index: 1000; 
+}
+
+
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header{
+    height: 60vh !important;
+    background: url(https://st2.depositphotos.com/1029473/9836/i/450/depositphotos_98362390-stock-photo-abstract-design-international-shipment-and.jpg) no-repeat center; 
+    background-size: cover;
+}
+.title{
+    margin-bottom: 40px;
+    font-size: 60px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+p{
+    margin-bottom: 40px;
+    font-size: 18px;
+    color: #ffffff;
+    padding: 0 100px;
+}
+
+.btn:hover{
+    background: none;
+}
+.btn{
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 40px;
+    border: 2px solid #0070f0;
+    color: #000000;
+    text-decoration: none;
+    background: #0070f0;
+}
+.btn-home{
+    display: flex;
+    color: #000000;
+    text-decoration: none;
+}
+.btn-home p{
+    color:black;
+}
+.btn-home{
+    margin: 0 10px;
+}
+.content{
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sau{
+    padding: 30px;
+    background: #1f1d1d;
+}
+
+.box-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.box-container .box {
+    height: 11rem;
+    width: 17rem;
+    background: #101010;
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 0 .3rem 5rem rgba(0, 0, 0, .5);
+    margin: 2rem;
+}
+.box-container .box i{
+    height: 3rem;
+    width: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    border-radius: 50%;
+    color: #ffffff;
+    background: #0070f0;
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.box-container .box h3{
+    font-size: 20px;
+    color: #0070f0;
+}
+
+.box-container .box p{
+    padding: 0 15px;
+    font-size: 16px;
+}
+
+.about{
+    background: #171717;
+}
+
+.price {
+    background: url(https://www.atlasindustrialgroup.com.co/wp-content/uploads/Hino-furg%C3%B3n-Europanel.png) no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+    position: relative; 
+    width: 100%; 
+    height: 400px; 
+    padding: 20px;  
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+.contact{
+    padding-top: 20px;
+    background: #171717;
+    padding-bottom: 0;
+}
+
+@media (max-width: 768px){
+    .title{
+        margin-bottom: 0;
+        font-size: 40px;
+}   
+    .sau{
+        height: 120vh;
+    }
+    .navbar{
+        display: none;
+    }
+}

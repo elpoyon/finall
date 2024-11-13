@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style6.css') }}">
+    <title>Editar Vehículos</title>
+</head>
+<body>
+    <div class="login-box">
+        <h1>Editar Vehículos</h1>
+        <form action="{{ url_for('vehiculos.edit', id=vehiculo.id) }}" method="post">
+            <div class="user-box">
+                <input type="text" id="marca" name="marca" value="{{ vehiculo.marca }}" required>
+                <label for="marca">Marca</label>
+            </div>
+            <div class="user-box">
+                <input type="text" id="placa" name="placa" value="{{ vehiculo.placa }}" required>
+                <label for="placa">Placa</label>
+            </div>
+            <div class="user-box">
+                <select id="conductores" name="conductores" required>
+                    {% for conductores in data %}
+                        <option value="{{ conductores.id }}">{{ conductores.nombre }}</option>
+                    {% endfor %}
+                </select>
+                <label for="conductores">Conductores</label>
+            </div>
+            <a href="#" onclick="this.closest('form').submit(); return false;">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Actualizar
+            </a>
+        </form>
+    </div>
+</body>
+</html>

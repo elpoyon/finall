@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style6.css') }}">
+    <title>Agregar Ordenes</title>
+</head>
+<body>
+    <div class="login-box">
+        <h1>Agregar Ordenes</h1>
+        <form action="{{ url_for('ordenes.add') }}" method="post">
+            <div class="user-box">
+                <input type="text" id="fecha" name="fecha">
+                <label for="fecha">Fecha</label>
+            </div>
+            <div class="user-box">
+                <input type="text" id="fletes" name="fletes">
+                <label for="fletes">Valor Flete</label>
+            </div>
+            <div class="user-box">
+                <select id="conductores" name="conductores" required>
+                    {% for conductores in data1 %}
+                        <option value="{{ conductores.id }}">{{ conductores.nombre }}</option>
+                    {% endfor %}
+                </select>
+                <label for="conductores">Conductores</label>
+            </div>
+            <div class="user-box">
+                <select id="vehiculos" name="vehiculos" required>
+                    {% for Vehiculos in data5 %}
+                        <option value="{{ Vehiculos.id }}">{{ Vehiculos.placa }}</option>
+                    {% endfor %}
+                </select>
+                <label for="vehiculos">Vehiculos</label>
+            </div>
+            <div class="user-box">
+                <select id="mercancias" name="mercancias" required>
+                    {% for mercancias in data3 %}
+                        <option value="{{ mercancias.id }}">{{ mercancias.nombre }}</option>
+                    {% endfor %}
+                </select>
+                <label for="mercancias">Mercancia</label>
+            </div>
+            <div class="user-box">
+                <select id="origenes" name="origenes" required>
+                    {% for origenes in data6 %}
+                        <option value="{{ origenes.id }}">{{ origenes.nombre }}</option>
+                    {% endfor %}
+                </select>
+                <label for="origenes">Origen</label>
+            </div>
+            <div class="user-box">
+                <select id="destinos" name="destinos" required>
+                    {% for destinos in data2 %}
+                        <option value="{{ destinos.id }}">{{ destinos.nombre }}</option>
+                    {% endfor %}
+                </select>
+                <label for="destinos">Destinos</label>
+            </div>
+            <div class="user-box">
+                <select id="clientes" name="clientes" required>
+                    {% for clientes in data %}
+                        <option value="{{ clientes.id }}">{{ clientes.nombre }}</option>
+                    {% endfor %}
+                </select>
+                <label for="clientes">Cliente</label>
+            </div>
+            <a href="#" onclick="this.closest('form').submit(); return false;">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Agregar Ordenes
+            </a>
+        </form>
+    </div>
+</body>
+</html>

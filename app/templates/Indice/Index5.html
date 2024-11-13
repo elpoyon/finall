@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link class="icon "rel="icon" href="static/logo.ico">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+    <title>Bejarano´s transport</title>
+</head>
+<body>
+
+    <div class="head">
+
+    <div class="logo">
+        <a href="static/logo.png" class="logo">
+    </div>
+     
+    <nav class="navbar">    
+        <a href="#">Inicio</a>
+        <a href="#Section1">Servicios</a>
+        <a href="#Section2">Nosotros</a>
+        <a href="#Section3">Flota</a>
+        <a href="/auth">Login</a>
+        <a href="/logout">Logout</a>
+    </nav>  
+    </div>
+        <header class="content header">
+            <div class="logo">
+            <img 
+            src="{{ url_for('static', filename='logo.ico') }}">
+            </div>
+            <h2 class="title">Inicio</h2>
+            <p>
+                Tu carga en las mejores manos. Entrega segura y confiable en todo el país.
+            </p>
+            <div class="btn-home">
+                <p>Agregar:</p>
+                <br>
+                <a href="/conductores" class="btn">Conductores</a>
+                <a href="/vehiculos" class="btn">Vehiculos</a>
+                <a href="/tmercancias" class="btn">Tipos de Mercancias</a>
+                <a href="/mercancias" class="btn">Mercancias</a>
+                <a href="/origenes" class="btn">Origenes</a>
+                <a href="/destinos" class="btn">Destinos</a>
+                <a href="/clientes" class="btn">Clientes</a>
+                <a href="/ordenes" class="btn">Ordenes</a>
+            </div>
+        </header>
+
+        <section class="content sau" id="Section1">
+            <h2 class="title">Servicios</h2>
+            <div class="box-container">
+                <div class="box">
+                    <i class="fab fa-angular"></i>
+                    <h3> Nivel Nacional</h3>
+                    <p>Servicio de tarnsporte de mercancias a nivel nacional, cualquier tipo de mercancia no viva.</p>
+
+                </div>
+                <div class="box">
+                    <i class="fab fa-angular"></i>
+                    <h3> Nivel urbano </h3>
+                    <p>Servicio de transporte de mercancias a nivel municipal o intermumnicipal, cualquier tipo de mercancia no viva.</p>
+
+                </div>
+                    
+            </div>
+        </section>
+
+        <section class="content about" id="Section2">
+            <h2 class="title">Nosotros</h2>
+            <p>Somos una empresa de transporte comprometida con la excelencia y la satisfacción de nuestros clientes. Nuestro equipo especializado ofrece soluciones eficaces para cumplir con la expectativa de cada cliente.</p>
+        </section>
+
+        <section class="content price" id="Section3">
+            <article class="contain">
+                <h3 class="title">Flota</h3>
+            </article>
+        </section>
+
+            <section class="content sau" id="Section1">
+                <div class="box-container">
+                    <div class="box">
+                        <i class="fab fa-angular"></i>
+                        <h3> Misión </h3>
+                        <p>Ofrecer soluciones de transporte confiables, seguras y eficientes de acuerdo a la necesidad de nuestros clientes. Nuestro compromiso es prestar un servicio integral y amable, en conjunto con un equipo dispuesto a brindar soluciones a la medida.</p>
+    
+                    </div>
+                    <div class="box">
+                        <i class="fab fa-angular"></i>
+                        <h3> Visión </h3>
+                        <p>Transformar la industria del transporte de mercancias a traves de soluciones innovadoras y a la medida de cada cliente. Tambien ser la empresa lider de transporte de mercancias a nivel nacional, cumpliendo con las espectativas de nuestros clientes</p>
+    
+                    </div>
+                        
+                </div>
+            </section>
+</body>
+</html>

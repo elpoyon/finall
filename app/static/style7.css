@@ -1,0 +1,61 @@
+/* Estilo general para el cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #003366; /* Fondo azul oscuro */
+    color: white; /* Texto blanco */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Estilo para el título */
+h1 {
+    color: #ffffff; /* Título blanco */
+    text-align: center;
+}
+
+/* Estilo para el contenedor de la tabla */
+.user-box {
+    max-width: 1000px; /* Ajusta el ancho máximo de la tabla */
+    margin: 0 auto; /* Centra la tabla en la página */
+    padding: 20px;
+    background-color: #004080; /* Fondo de la caja azul más claro */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Estilo para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Estilo para las celdas de la tabla */
+th, td {
+    border: 1px solid #ffffff; /* Borde blanco */
+    padding: 10px;
+    text-align: left;
+}
+
+/* Estilo para los encabezados de la tabla */
+th {
+    background-color: #00264d; /* Fondo de los encabezados azul más oscuro */
+}
+
+/* Estilo para las filas de la tabla */
+tr:nth-child(even) {
+    background-color: #003366; /* Fondo de filas pares azul oscuro */
+}
+
+tr:nth-child(odd) {
+    background-color: #004080; /* Fondo de filas impares azul más claro */
+}
+
+/* Estilo para los enlaces dentro de la tabla */
+td a {
+    color: #ffffff; /* Texto de los enlaces blanco */
+    text-decoration: none; /* Sin subrayado */
+    margin-right: 10px; /* Espacio entre enlaces */
+}
+
+td a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
