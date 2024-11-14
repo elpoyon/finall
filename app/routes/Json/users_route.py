@@ -12,6 +12,8 @@ def listar():
 @bp.route('/UserAsync/add', methods=['POST'])   
 def create_usuario():
     data = request.json
+    if 'username' not in data or 'password' not in data:
+        return jsonify ({'message':'usernameand password are required'}),400
     new_user = Usuario(username=data['username'], password=data['password'])
     db.session.add(new_user)
     db.session.commit()

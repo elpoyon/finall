@@ -1,18 +1,15 @@
-import flet as ft
+import flet as ft 
 
 def main(page: ft.Page):
     page.title = "Login"
     page.horizontal_alignment = "center"
     page.vertical_alignment = "center"
-    page.theme_mode = ft.ThemeMode.DARK  # Puedes adaptar el tema según tus preferencias
-    
-    # Función para manejar el envío del formulario
+    page.theme_mode = ft.ThemeMode.DARK
+
     def handle_login(e):
         username = username_field.value
         password = password_field.value
-        # Aquí podrías agregar lógica de autenticación o navegar a otra vista
 
-    # Elementos del formulario
     title_text = ft.Text("Iniciar Sesión", size=30, weight="bold", color="white")
     
     username_field = ft.TextField(
@@ -40,7 +37,6 @@ def main(page: ft.Page):
     register_text = ft.Text("No tengo cuenta", color="white")
     register_button = ft.TextButton("Crear cuenta", on_click=lambda e: page.go("/add"))
 
-    # Estructura del formulario
     form = ft.Column(
         [
             title_text,
@@ -60,7 +56,6 @@ def main(page: ft.Page):
         spacing=10
     )
     
-    # Contenedor principal
     page.add(
         ft.Container(
             content=form,
@@ -72,4 +67,3 @@ def main(page: ft.Page):
     )
 
 ft.app(target=main)
-    
