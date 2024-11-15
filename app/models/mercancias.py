@@ -9,3 +9,11 @@ class Mercancias(db.Model):
     
     tmercancias = db.relationship('TMercancias' , back_populates='mercancias')
     ordenes = db.relationship('Ordenes' , back_populates='mercancias')
+    
+    
+    def to_dict(self):
+        return{
+            "id":self.id,
+            "nombre" : self.nombre,
+            "tipo de mercancias" : self.tmercancias_id,
+        }

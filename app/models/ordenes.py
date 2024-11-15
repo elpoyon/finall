@@ -20,4 +20,16 @@ class Ordenes(db.Model):
     origenes = db.relationship('Origenes' , back_populates='ordenes')
     destinos = db.relationship('Destinos' , back_populates='ordenes')
     
+    def to_dict(self):
+        return{
+            "id":self.id,
+            "fecha" : self.fecha,
+            "cliente" : self.cliente_id,
+            "vehiculo" : self.vehiculo_id,
+            "conductor" : self.conductor_id,
+            "mercancia" :self.mercancia_id,
+            "origen":self.origen_id,
+            "destino":self.destino_id
+        }
+    
     

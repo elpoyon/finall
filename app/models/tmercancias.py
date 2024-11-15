@@ -7,3 +7,10 @@ class TMercancias(db.Model):
     nombre = db.Column(db.String(100), nullable=False)
     
     mercancias = db.relationship('Mercancias', back_populates='tmercancias')
+    
+    
+    def to_dict(self):
+        return{
+            "id":self.id,
+            "nombre" : self.nombre
+        }

@@ -9,5 +9,11 @@ class Clientes(db.Model):
     
     ordenes = db.relationship('Ordenes' , back_populates='clientes')
     
-    #def get_id():
+    def to_dict(self):
+        return{
+            "id":self.id,
+            "nombre" : self.nombre,
+            "direccion" : self.direccion,
+            "telefono" : self.telefono
+        }
         

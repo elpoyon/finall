@@ -17,5 +17,5 @@ class Vehiculos(db.Model):
             'id': self.id,
             'marca': self.marca,
             'placa': self.placa,
-            'conductores': self.conductores_id
+            'conductor': self.conductores_id
         }

@@ -5,12 +5,12 @@ from app import db
 bp = Blueprint('UserAsync', __name__)
 
 @bp.route('/UserAsync/index')
-def listar():
+def index():
     users = Usuario.query.all()
     return jsonify([user.to_dict() for user in users])
 
 @bp.route('/UserAsync/add', methods=['POST'])   
-def create_usuario():
+def create_user():
     data = request.json
     if 'username' not in data or 'password' not in data:
         return jsonify ({'message':'usernameand password are required'}),400
@@ -20,7 +20,7 @@ def create_usuario():
     return jsonify({'message': 'User created successfully'}), 201
 
 @bp.route('/UserAsync/update/<int:id>', methods=['PUT'])
-def update_usuario(id):
+def update_user(id):
     usuario = Usuario.query.get(id)
     if usuario:
         data = request.json

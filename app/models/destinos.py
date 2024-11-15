@@ -10,3 +10,12 @@ class Destinos(db.Model):
     
     
     ordenes = db.relationship('Ordenes' , back_populates='destinos')    
+    
+    
+    def to_dict(self):
+        return {
+            'id': self.id, 
+            'nombre' : self.nombre,
+            'direccion' : self.direccion,
+            'telefono' : self.telefono
+        }
