@@ -19,4 +19,20 @@ def created_origin():
     return jsonify({'mesagge':'Origin created successful'}), 201
 @bp.route('/OrigenesAsync/update/<int:id>', methods=['PUT'])
 def update_origin(id):
-    
+    origin = Origenes.query.get_or_404(id)
+    if origin:
+        data = request.json
+        origin.nombre = data['nombre']
+        origin.direccion = data['direccion']
+        origin.telefono = data['telefono']
+        db.session.commit()
+        return jsonify({'mesagge': 'Origin update successful'}), 201
+    return jsonify({'mesagge':'Origin not found'}), 404
+@bp.route('/Origenes/delete/<int:id>', methods =['DELETE'])
+def delete(id):
+    origin = Origenes.query.get_or_404(id)
+    if origin:
+        db.session.delete(id)
+        db.session.commit()
+        return jsonify({'mesagge': 'Origin deleted successful'}), 201
+    return jsonify({'mesagge':'Origin not found'}), 404

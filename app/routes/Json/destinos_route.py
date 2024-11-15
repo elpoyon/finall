@@ -30,7 +30,7 @@ def update_destination(id):
         return jsonify({'message':' Destination update successful'}), 201
     return jsonify({'mesagge': 'Destination not found'}), 404
 
-@bp.route('/DestinoAsync/delete/<int:id>', methods = ['DELETE'])
+@bp.route('/DestinoAsync/delete/<int:id>', methods = [])
 def delete_destination(id):
     destination = Destinos.query.get_or_404(id)
     if destination:
