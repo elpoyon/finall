@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style9.css') }}">
+    <title>Clientes</title>
+</head>
+<body>
+    <h1>Lista de Clientes</h1>
+    <div class="user-box">
+        <input type="text" id="searchInput" placeholder="Buscar por nombre" />
+        <table id="userTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cliente in data %}
+                    <tr>
+                        <td>{{ cliente.id }}</td>
+                        <td>{{ cliente.nombre }}</td>
+                        <td>{{ cliente.direccion }}</td>
+                        <td>{{ cliente.telefono }}</td>
+                        <td>
+                            <a href="{{ url_for('clientes.edit', id=cliente.id) }}">
+                                <button class="a2">Editar</button>
+                            </a>
+                            <a href="{{ url_for('clientes.delete', id=cliente.id) }}">
+                                <button class="a2">Eliminar</button>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ url_for('clientes.add') }}">
+            <button class="a2">Agregar</button>
+        </a>
+        <a href="{{ url_for('auth.login') }}">
+            <button class="a2">Regresar</button>
+        </a>
+    </div>
+
+    <!-- QR Reader Modal -->
+    
+
+    <script>
+        // Funcionalidad de búsqueda
+        document.getElementById('searchInput').addEventListener('keyup', function() {
+            const searchValue = this.value.toLowerCase();
+            const rows = document.querySelectorAll('#userTable tbody tr');
+            rows.forEach(row => {
+                const userName = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+                row.style.display = userName.includes(searchValue) ? '' : 'none';
+            });
+        });
+
+    </script>
+</body>
+</html>
