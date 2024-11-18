@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style5.css') }}">
+    <title>Agregar Empleados</title>
+</head>
+<body>
+    <div class="login-box">
+        <h1>Agregar Empleados</h1>
+        <form action="{{ url_for('empleados.add') }}" method="POST">
+            <div class="user-box">
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="nombre">Nombre</label>
+            </div>
+            <div class="user-box">
+                <input type="text" id="direccion" name="direccion" required>
+                <label for="direccion">Dirección</label>
+            </div>
+            <div class="user-box">
+                <input type="text" id="telefono" name="telefono" required>
+                <label for="telefono">Telefono</label>
+            </div>
+            <a href="#" onclick="this.closest('form').submit(); return false;">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Agregar Clientes
+            </a>
+        </form>
+    </div>
+</body>
+</html>

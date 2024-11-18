@@ -7,6 +7,7 @@ class Mercancias(db.Model):
     nombre = db.Column(db.String(100), nullable=False)
     tmercancias_id = db.Column(db.Integer, db.ForeignKey('tmercancia.id'))
     
+    
     tmercancias = db.relationship('TMercancias' , back_populates='mercancias')
     ordenes = db.relationship('Ordenes' , back_populates='mercancias')
     

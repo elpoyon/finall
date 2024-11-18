@@ -16,6 +16,7 @@ class Conductores(db.Model):
     nombre = db.Column(db.String(150), nullable=False)
     direccion = db.Column(db.String(150), nullable=False)
     telefono = db.Column(db.String(150), nullable=False)
+    salud = db.Column(db.File)
     
     
     
@@ -26,7 +27,8 @@ class Conductores(db.Model):
             "id":self.id,
             "nombre" : self.nombre,
             "direccion" : self.direccion,
-            "telefono" : self.telefono
+            "telefono" : self.telefono,
+            "salud": self.salud
         }
     def generate_qr(self):
         from PIL import Image
