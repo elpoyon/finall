@@ -9,7 +9,7 @@ def listar():
     destinos = Destinos.query,all()
     return jsonify([destino.to_dict() for destino in destinos])
 
-@bp.route('/DestinosAsync/create', methods = 'POST')
+@bp.route('/DestinosAsync/create', methods =['POST'])
 def create_destination():
     data = request.json
     

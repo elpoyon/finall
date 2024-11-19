@@ -14,16 +14,32 @@
     <div class="logo">
         <a href="static/logo.png" class="logo">
     </div>
-     
     <nav class="navbar">    
         <a href="#">Inicio</a>
         <a href="#Section1">Servicios</a>
         <a href="#Section2">Nosotros</a>
         <a href="#Section3">Flota</a>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleMenu()">Gestión</button>
+            <div class="dropdown-content" id="myDropdown">
+                <a href="/conductores">Conductores</a>
+                <a href="/vehiculos">Vehículos</a>
+                <a href="/tmercancias">Tipos de Mercancías</a>
+                <a href="/mercancias">Mercancías</a>
+                <a href="/origenes">Orígenes</a>
+                <a href="/destinos">Destinos</a>
+                <a href="/clientes">Clientes</a>
+                <a href="/ordenes">Órdenes</a>
+            </div>
+        </div>
         <a href="/auth">Login</a>
         <a href="/logout">Logout</a>
+        
+    </div>
     </nav>  
     </div>
+    
+    
         <header class="content header">
             <div class="logo">
             <img 
@@ -32,19 +48,8 @@
             <h2 class="title">Inicio</h2>
             <p>
                 Tu carga en las mejores manos. Entrega segura y confiable en todo el país.
-            </p>
-            <div class="btn-home">
-                <p>Agregar:</p>
-                <br>
-                <a href="/conductores" class="btn">Conductores</a>
-                <a href="/vehiculos" class="btn">Vehiculos</a>
-                <a href="/tmercancias" class="btn">Tipos de Mercancias</a>
-                <a href="/mercancias" class="btn">Mercancias</a>
-                <a href="/origenes" class="btn">Origenes</a>
-                <a href="/destinos" class="btn">Destinos</a>
-                <a href="/clientes" class="btn">Clientes</a>
-                <a href="/ordenes" class="btn">Ordenes</a>
-            </div>
+            </p> 
+
         </header>
 
         <section class="content sau" id="Section1">
@@ -94,5 +99,8 @@
                         
                 </div>
             </section>
+            <footer class="footer-io">
+                <p> ©2024 Samuel Bejarano. Todos los derechos reservados. Ninguna parte de este contenido, ya sea texto, imagen o cualquier otro material, puede ser reproducida, distribuida, transmitida o almacenada de ninguna forma ni por ningún medio, sin el permiso previo por escrito del autor, excepto en los casos permitidos por la legislación de uso justo. </p>
+            </footer>
 </body>
 </html>

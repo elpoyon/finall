@@ -16,7 +16,7 @@ class Conductores(db.Model):
     nombre = db.Column(db.String(150), nullable=False)
     direccion = db.Column(db.String(150), nullable=False)
     telefono = db.Column(db.String(150), nullable=False)
-    salud = db.Column(db.File)
+    salud = db.Column(db.String(170), nullable=False)
     
     
     
